@@ -4,7 +4,7 @@ import { PageContainer } from './PageContainer'
 
 export function SiteHeader(): JSX.Element {
   return (
-    <header className="border-b border-[var(--color-border)] bg-[var(--color-card)]/95 backdrop-blur">
+    <header className="sticky top-0 z-20 border-b border-[var(--color-border)] bg-[var(--color-card)]/95 backdrop-blur">
       <PageContainer>
         <div className="flex min-h-20 flex-wrap items-center justify-between gap-4">
           <Link to="/" className="text-lg font-semibold tracking-wide text-[var(--color-text)]">

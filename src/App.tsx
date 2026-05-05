@@ -1,17 +1,9 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { PageContainer } from './components/PageContainer'
 import { SiteFooter } from './components/SiteFooter'
 import { SiteHeader } from './components/SiteHeader'
-
-function PlaceholderPage({ title }: { title: string }): JSX.Element {
-  return (
-    <PageContainer>
-      <section className="py-16">
-        <h1 className="text-3xl font-semibold tracking-tight">{title}</h1>
-      </section>
-    </PageContainer>
-  )
-}
+import { AboutContactPage } from './pages/AboutContactPage'
+import { HomePage } from './pages/HomePage'
+import { ListingsPage } from './pages/ListingsPage'
 
 export default function App(): JSX.Element {
   return (
@@ -19,9 +11,9 @@ export default function App(): JSX.Element {
       <SiteHeader />
       <main>
         <Routes>
-          <Route path="/" element={<PlaceholderPage title="Home" />} />
-          <Route path="/listings" element={<PlaceholderPage title="Listings" />} />
-          <Route path="/about-contact" element={<PlaceholderPage title="About & Contact" />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/listings" element={<ListingsPage />} />
+          <Route path="/about-contact" element={<AboutContactPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
