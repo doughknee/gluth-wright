@@ -48,7 +48,7 @@ export function ListingsPage(): JSX.Element {
         </p>
       </section>
 
-      <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-4">
+      <section className="panel p-5">
         <div className="grid gap-3 md:grid-cols-4">
           <label className="text-sm">
             <span className="mb-1 block font-medium">Neighborhood</span>
@@ -109,7 +109,7 @@ export function ListingsPage(): JSX.Element {
       </section>
 
       {hasLoadError ? (
-        <section className="rounded-xl border border-[var(--color-error)] bg-[var(--color-card)] p-8">
+        <section className="panel p-8">
           <h2 className="text-2xl font-semibold">We could not load listings right now</h2>
           <p className="mt-2 text-[var(--color-text-muted)]">
             Please try again in a moment, or contact our team directly and we will walk you through current availability.
@@ -119,7 +119,7 @@ export function ListingsPage(): JSX.Element {
           </Link>
         </section>
       ) : filteredListings.length === 0 ? (
-        <section className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-8">
+        <section className="panel p-8">
           <h2 className="text-2xl font-semibold">No homes match those filters yet</h2>
           <p className="mt-2 text-[var(--color-text-muted)]">
             Try widening your budget or neighborhood preferences. We can also notify you when new homes become available.
@@ -131,7 +131,7 @@ export function ListingsPage(): JSX.Element {
       ) : (
         <section className="grid gap-5 pb-16 pt-3 md:grid-cols-2 lg:grid-cols-3">
           {filteredListings.map((listing) => (
-            <article className="overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-card)]" key={listing.id}>
+            <article className="panel overflow-hidden" key={listing.id}>
               <img alt={listing.title} className="h-48 w-full object-cover" loading="lazy" src={listing.imageUrl} />
               <div className="p-4">
                 <h2 className="text-lg font-semibold">{listing.title}</h2>

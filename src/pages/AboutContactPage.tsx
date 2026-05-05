@@ -70,7 +70,7 @@ export function AboutContactPage(): JSX.Element {
       </section>
 
       <section className="grid gap-6 md:grid-cols-2">
-        <article className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-6">
+        <article className="panel p-6">
           <h2 className="text-2xl font-semibold">How we work</h2>
           <ol className="mt-4 space-y-3 text-[var(--color-text-muted)]">
             <li>
@@ -85,7 +85,7 @@ export function AboutContactPage(): JSX.Element {
           </ol>
         </article>
 
-        <article className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-6">
+        <article className="panel p-6">
           <h2 className="text-2xl font-semibold">Contact details</h2>
           <p className="mt-4 text-[var(--color-text-muted)]">Phone: (509) 555-0144</p>
           <p className="mt-2 text-[var(--color-text-muted)]">Email: hello@gluthwrightproperties.com</p>
@@ -95,7 +95,7 @@ export function AboutContactPage(): JSX.Element {
       </section>
 
       <section className="py-10" id="contact-form">
-        <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-card)] p-6">
+        <div className="panel p-6">
           <h2 className="text-2xl font-semibold">Talk to our team</h2>
           <p className="mt-2 text-[var(--color-text-muted)]">Tell us a little about your needs and we will follow up quickly.</p>
           <form className="mt-6 space-y-4" noValidate onSubmit={handleSubmit}>

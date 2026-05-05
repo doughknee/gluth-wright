@@ -4,7 +4,7 @@ import { PageContainer } from './PageContainer'
 
 export function SiteFooter(): JSX.Element {
   return (
-    <footer className="mt-16 border-t border-[var(--color-border)] bg-[var(--color-surface-secondary)]">
+    <footer className="mt-16 border-t border-[var(--color-border)] bg-[var(--color-surface-secondary)]/80">
       <PageContainer>
         <div className="flex flex-col gap-6 py-10 sm:flex-row sm:items-center sm:justify-between">
           <div>
