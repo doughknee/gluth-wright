@@ -20,7 +20,7 @@ export function SiteHeader(): JSX.Element {
           </Link>
           <Link
             to={primaryCta.href}
-            className="rounded-full bg-[var(--color-accent)] px-3 py-2 text-xs font-semibold text-[#1c150c] transition-colors hover:bg-[var(--color-accent-strong)] sm:px-4 sm:py-2 sm:text-sm"
+            className="rounded-full bg-[var(--color-accent)] px-3 py-2 text-xs font-semibold text-[var(--color-card)] transition-colors hover:bg-[var(--color-accent-strong)] sm:px-4 sm:py-2 sm:text-sm"
           >
             Talk to Us
           </Link>
