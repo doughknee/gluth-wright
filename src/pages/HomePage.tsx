@@ -3,7 +3,6 @@ import { PageContainer } from '../components/PageContainer'
 import {
   homeServices,
   listings,
-  ownerReasons,
   primaryCta,
   secondaryCta,
   testimonials,
@@ -12,6 +11,11 @@ import {
 
 export function HomePage(): JSX.Element {
   const featuredListings = listings.slice(0, 3)
+  const ownerShift = [
+    { before: 'Slow replies and fragmented updates', after: 'Single point of contact and predictable reporting' },
+    { before: 'Vacancy drags with generic listing copy', after: 'Positioned listings with faster qualified inquiries' },
+    { before: 'Reactive maintenance and budget drift', after: 'Proactive coordination with clear cost visibility' },
+  ]
 
   return (
     <>
@@ -91,7 +95,7 @@ export function HomePage(): JSX.Element {
         </PageContainer>
       </section>
 
-      <section>
+      <section className="bg-[color-mix(in_oklab,var(--color-surface-secondary),transparent_25%)]">
         <PageContainer>
           <div className="py-12 sm:py-16">
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
@@ -109,7 +113,12 @@ export function HomePage(): JSX.Element {
                     <p className="mt-2 text-sm text-[var(--color-text-muted)]">
                       {listing.neighborhood} • {listing.beds} bd • {listing.baths} ba
                     </p>
-                    <p className="mt-3 font-semibold text-[var(--color-accent)]">${listing.monthlyRent.toLocaleString()}/mo</p>
+                    <div className="mt-3 flex items-center justify-between gap-2">
+                      <p className="font-semibold text-[var(--color-accent)]">${listing.monthlyRent.toLocaleString()}/mo</p>
+                      <span className="rounded-full border border-[var(--color-border)] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-muted)]">
+                        {listing.availableOn}
+                      </span>
+                    </div>
                   </div>
                 </article>
               ))}
@@ -118,17 +127,20 @@ export function HomePage(): JSX.Element {
         </PageContainer>
       </section>
 
-      <section className="bg-[color-mix(in_oklab,var(--color-surface-secondary),transparent_45%)]">
+      <section>
         <PageContainer>
           <div className="py-12 sm:py-16">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Why owners move to us and stay</h2>
-            <ul className="mt-6 grid gap-3">
-              {ownerReasons.map((reason) => (
-                <li className="panel px-4 py-4" key={reason}>
-                  {reason}
-                </li>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">What changes when owners switch</h2>
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
+              {ownerShift.map((item) => (
+                <article className="panel p-5" key={item.before}>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-highlight)]">Before</p>
+                  <p className="mt-1 text-sm text-[var(--color-text-muted)]">{item.before}</p>
+                  <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">After</p>
+                  <p className="mt-1 text-sm font-semibold">{item.after}</p>
+                </article>
               ))}
-            </ul>
+            </div>
           </div>
         </PageContainer>
       </section>
@@ -136,16 +148,24 @@ export function HomePage(): JSX.Element {
       <section>
         <PageContainer>
           <div className="py-12 sm:py-16">
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">What clients say after switching</h2>
-            <div className="mt-8 grid gap-4 md:grid-cols-3">
-              {testimonials.map((testimonial) => (
-                <blockquote className="panel p-5" key={testimonial.name}>
-                  <p className="text-sm leading-relaxed">“{testimonial.quote}”</p>
-                  <footer className="mt-4 text-sm text-[var(--color-text-muted)]">
-                    <span className="font-semibold text-[var(--color-text)]">{testimonial.name}</span> — {testimonial.role}
-                  </footer>
-                </blockquote>
-              ))}
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Client outcomes, not promises</h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
+              <blockquote className="panel p-6 sm:p-7">
+                <p className="text-lg leading-relaxed">“{testimonials[0].quote}”</p>
+                <footer className="mt-5 text-sm text-[var(--color-text-muted)]">
+                  <span className="font-semibold text-[var(--color-text)]">{testimonials[0].name}</span> — {testimonials[0].role}
+                </footer>
+              </blockquote>
+              <div className="grid gap-4">
+                {testimonials.slice(1).map((testimonial) => (
+                  <blockquote className="panel p-5" key={testimonial.name}>
+                    <p className="text-sm leading-relaxed">“{testimonial.quote}”</p>
+                    <footer className="mt-4 text-sm text-[var(--color-text-muted)]">
+                      <span className="font-semibold text-[var(--color-text)]">{testimonial.name}</span> — {testimonial.role}
+                    </footer>
+                  </blockquote>
+                ))}
+              </div>
             </div>
           </div>
         </PageContainer>
