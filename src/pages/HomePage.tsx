@@ -104,20 +104,17 @@ export function HomePage(): JSX.Element {
                 Browse all listings
               </Link>
             </div>
-            <div className="mt-6 grid gap-4 sm:mt-8 sm:gap-5 md:grid-cols-3">
+            <div className="mt-6 grid gap-6 sm:mt-8">
               {featuredListings.map((listing) => (
-                <article className="panel overflow-hidden" key={listing.id}>
-                  <img alt={listing.title} className="h-52 w-full object-cover sm:h-44" src={listing.imageUrl} />
-                  <div className="p-4">
-                    <h3 className="font-semibold">{listing.title}</h3>
-                    <p className="mt-2 text-sm text-[var(--color-text-muted)]">
-                      {listing.neighborhood} • {listing.beds} bd • {listing.baths} ba
-                    </p>
-                    <div className="mt-3 flex items-center justify-between gap-2">
+                <article className="grid gap-4 border-b border-[color-mix(in_oklab,var(--color-border),transparent_25%)] pb-6 last:border-b-0 md:grid-cols-[260px_1fr] md:items-center" key={listing.id}>
+                  <img alt={listing.title} className="h-48 w-full rounded-lg object-cover md:h-36" src={listing.imageUrl} />
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--color-highlight)]">{listing.neighborhood}</p>
+                    <h3 className="mt-1 text-xl font-semibold">{listing.title}</h3>
+                    <p className="mt-2 text-sm text-[var(--color-text-muted)]">{listing.beds} bedrooms • {listing.baths} bathrooms</p>
+                    <div className="mt-3 flex flex-wrap items-center gap-3">
                       <p className="font-semibold text-[var(--color-accent)]">${listing.monthlyRent.toLocaleString()}/mo</p>
-                      <span className="rounded-full border border-[var(--color-border)] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.08em] text-[var(--color-text-muted)]">
-                        {listing.availableOn}
-                      </span>
+                      <span className="text-xs font-medium text-[var(--color-text-muted)]">{listing.availableOn}</span>
                     </div>
                   </div>
                 </article>
@@ -131,9 +128,9 @@ export function HomePage(): JSX.Element {
         <PageContainer>
           <div className="py-12 sm:py-16">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">What changes when owners switch</h2>
-            <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="mt-6 grid gap-5 md:grid-cols-3">
               {ownerShift.map((item) => (
-                <article className="panel p-5" key={item.before}>
+                <article className="border-l-2 border-[var(--color-accent)] pl-4" key={item.before}>
                   <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-highlight)]">Before</p>
                   <p className="mt-1 text-sm text-[var(--color-text-muted)]">{item.before}</p>
                   <p className="mt-4 text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--color-accent)]">After</p>
@@ -149,8 +146,8 @@ export function HomePage(): JSX.Element {
         <PageContainer>
           <div className="py-12 sm:py-16">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Client outcomes, not promises</h2>
-            <div className="mt-8 grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
-              <blockquote className="panel p-6 sm:p-7">
+            <div className="mt-8 grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
+              <blockquote className="border-l-4 border-[var(--color-accent)] bg-[color-mix(in_oklab,var(--color-surface-secondary),transparent_35%)] p-6 sm:p-7">
                 <p className="text-lg leading-relaxed">“{testimonials[0].quote}”</p>
                 <footer className="mt-5 text-sm text-[var(--color-text-muted)]">
                   <span className="font-semibold text-[var(--color-text)]">{testimonials[0].name}</span> — {testimonials[0].role}
@@ -158,7 +155,7 @@ export function HomePage(): JSX.Element {
               </blockquote>
               <div className="grid gap-4">
                 {testimonials.slice(1).map((testimonial) => (
-                  <blockquote className="panel p-5" key={testimonial.name}>
+                  <blockquote className="border-b border-[color-mix(in_oklab,var(--color-border),transparent_20%)] pb-4 last:border-b-0 last:pb-0" key={testimonial.name}>
                     <p className="text-sm leading-relaxed">“{testimonial.quote}”</p>
                     <footer className="mt-4 text-sm text-[var(--color-text-muted)]">
                       <span className="font-semibold text-[var(--color-text)]">{testimonial.name}</span> — {testimonial.role}
