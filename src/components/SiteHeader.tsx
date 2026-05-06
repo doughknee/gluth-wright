@@ -10,7 +10,7 @@ export function SiteHeader(): JSX.Element {
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3">
             <img
               alt="Gluth Wright Properties logo"
-              className="h-10 w-auto rounded-sm sm:h-12"
+              className="logo-cutout h-9 w-auto sm:h-10"
               loading="eager"
               src="https://lirp.cdn-website.com/5a3149f7/dms3rep/multi/opt/logo-2-1920w.jpg"
             />
