@@ -1,34 +1,34 @@
 @import 'tailwindcss';
 
 :root {
-  --color-surface: #f2f4f8;
-  --color-surface-secondary: #e6ebf3;
-  --color-card: #ffffff;
-  --color-text: #142033;
-  --color-text-muted: #54657f;
-  --color-border: #c8d4e4;
-  --color-accent: #0d6e8a;
-  --color-accent-strong: #094f6f;
-  --color-highlight: #f4a259;
-  --color-success: #237953;
-  --color-warning: #9f6919;
-  --color-error: #ad2c39;
+  --color-surface: #0b1220;
+  --color-surface-secondary: #101b31;
+  --color-card: #111e35;
+  --color-text: #eef4ff;
+  --color-text-muted: #afbdd8;
+  --color-border: #263655;
+  --color-accent: #d7a15f;
+  --color-accent-strong: #bb8240;
+  --color-highlight: #62c6dd;
+  --color-success: #77d2a0;
+  --color-warning: #f1c07b;
+  --color-error: #ee8b98;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-surface: #0f1724;
-    --color-surface-secondary: #162133;
-    --color-card: #1d2b40;
-    --color-text: #e8f0fb;
-    --color-text-muted: #afc0d8;
-    --color-border: #314760;
-    --color-accent: #52b4d4;
-    --color-accent-strong: #3d95b7;
-    --color-highlight: #ffc17a;
-    --color-success: #70c48e;
-    --color-warning: #e5bd81;
-    --color-error: #e38c94;
+    --color-surface: #050914;
+    --color-surface-secondary: #0a1326;
+    --color-card: #0e1a30;
+    --color-text: #f6f8ff;
+    --color-text-muted: #bac6df;
+    --color-border: #223252;
+    --color-accent: #e1ad6b;
+    --color-accent-strong: #c58f4d;
+    --color-highlight: #67cbe2;
+    --color-success: #7dd9a9;
+    --color-warning: #f5c783;
+    --color-error: #f2919d;
   }
 }
 
@@ -44,18 +44,18 @@ body,
 
 body {
   margin: 0;
-  font-family: 'Source Sans 3', ui-sans-serif, sans-serif;
+  font-family: Manrope, ui-sans-serif, sans-serif;
   color: var(--color-text);
   background:
-    radial-gradient(circle at 10% 10%, color-mix(in oklab, var(--color-accent), transparent 84%), transparent 40%),
-    radial-gradient(circle at 88% 14%, color-mix(in oklab, var(--color-highlight), transparent 86%), transparent 35%),
-    linear-gradient(160deg, var(--color-surface), var(--color-surface-secondary));
+    radial-gradient(circle at 12% 8%, color-mix(in oklab, var(--color-highlight), transparent 88%), transparent 46%),
+    radial-gradient(circle at 92% 14%, color-mix(in oklab, var(--color-accent), transparent 87%), transparent 42%),
+    linear-gradient(155deg, var(--color-surface), var(--color-surface-secondary));
 }
 
 h1,
 h2,
 h3 {
-  font-family: 'Bitter', ui-serif, serif;
+  font-family: 'Playfair Display', ui-serif, serif;
   letter-spacing: -0.02em;
 }
 
@@ -82,12 +82,12 @@ textarea:focus-visible {
   justify-content: center;
   border-radius: 999px;
   border: 1px solid var(--color-accent);
-  background: linear-gradient(120deg, var(--color-accent), var(--color-accent-strong));
-  color: var(--color-card);
+  background: linear-gradient(120deg, var(--color-accent), color-mix(in oklab, var(--color-accent-strong), white 6%));
+  color: #1c150c;
   font-weight: 700;
   text-decoration: none;
   padding: 0.65rem 1rem;
-  box-shadow: 0 14px 28px -20px color-mix(in oklab, var(--color-accent), black 20%);
+  box-shadow: 0 20px 40px -26px color-mix(in oklab, var(--color-accent), black 32%);
 }
 
 .btn-primary:hover {
@@ -101,7 +101,7 @@ textarea:focus-visible {
   justify-content: center;
   border-radius: 999px;
   border: 1px solid var(--color-border);
-  background: var(--color-card);
+  background: color-mix(in oklab, var(--color-card), transparent 14%);
   color: var(--color-text);
   font-weight: 700;
   text-decoration: none;
@@ -124,9 +124,9 @@ textarea:focus-visible {
 
 .panel {
   border: 1px solid color-mix(in oklab, var(--color-border), white 15%);
-  background: color-mix(in oklab, var(--color-card), white 5%);
+  background: linear-gradient(170deg, color-mix(in oklab, var(--color-card), white 3%), color-mix(in oklab, var(--color-card), black 10%));
   border-radius: 1rem;
-  box-shadow: 0 24px 48px -36px rgba(11, 33, 64, 0.35);
+  box-shadow: 0 30px 60px -38px rgba(2, 10, 22, 0.8);
 }
 
 .eyebrow {
@@ -139,7 +139,16 @@ textarea:focus-visible {
 
 .hero-title {
   font-size: clamp(2.2rem, 5vw, 4.3rem);
-  line-height: 1.03;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+.luxury-line {
+  display: inline-block;
+  background: linear-gradient(100deg, var(--color-text), color-mix(in oklab, var(--color-highlight), white 30%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .input:focus-visible {

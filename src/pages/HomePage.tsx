@@ -22,11 +22,11 @@ export function HomePage(): JSX.Element {
               <p className="eyebrow mb-3">
                 John Gluth Wright Property Management
               </p>
-              <h1 className="hero-title font-semibold text-balance">
-                Trusted neighborhood property management, built on real relationships.
+              <h1 className="hero-title font-semibold">
+                Property management that feels <span className="luxury-line">elevated, local, and deeply reliable.</span>
               </h1>
               <p className="mt-5 max-w-xl text-lg text-[var(--color-text-muted)]">
-                We help owners protect long-term value and help renters find homes that feel right from day one.
+                We combine high-touch neighborhood care with disciplined operations so owners protect value and residents feel at home from day one.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link className="btn-primary" to={primaryCta.href}>
@@ -39,9 +39,9 @@ export function HomePage(): JSX.Element {
             </div>
             <div className="panel overflow-hidden p-2">
               <img
-                alt="A welcoming residential street with well-kept homes"
+                alt="Luxury residential home exterior at dusk"
                 className="h-96 w-full rounded-xl object-cover"
-                src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&w=1400&q=80"
+                src="https://images.unsplash.com/photo-1600607687644-c7f34b5f7f91?auto=format&fit=crop&w=1400&q=80"
               />
             </div>
           </div>
@@ -64,7 +64,7 @@ export function HomePage(): JSX.Element {
       <section>
         <PageContainer>
           <div className="py-16">
-            <h2 className="text-3xl font-semibold tracking-tight">Support built around owners and residents</h2>
+            <h2 className="text-3xl font-semibold tracking-tight">Concierge-level support for owners and residents</h2>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {homeServices.map((service) => (
                 <article className="panel p-6" key={service.title}>
@@ -81,7 +81,7 @@ export function HomePage(): JSX.Element {
         <PageContainer>
           <div className="py-16">
             <div className="flex items-end justify-between gap-4">
-              <h2 className="text-3xl font-semibold tracking-tight">Featured rentals</h2>
+              <h2 className="text-3xl font-semibold tracking-tight">Featured residences</h2>
               <Link className="text-sm font-semibold text-[var(--color-accent)] hover:underline" to="/listings">
                 Browse all listings
               </Link>
@@ -107,7 +107,7 @@ export function HomePage(): JSX.Element {
       <section>
         <PageContainer>
           <div className="py-16">
-            <h2 className="text-3xl font-semibold tracking-tight">Why owners choose our team</h2>
+            <h2 className="text-3xl font-semibold tracking-tight">Why owners move to us and stay</h2>
             <ul className="mt-6 grid gap-3">
               {ownerReasons.map((reason) => (
                 <li className="panel px-4 py-3" key={reason}>
@@ -122,7 +122,7 @@ export function HomePage(): JSX.Element {
       <section className="border-y border-[var(--color-border)]">
         <PageContainer>
           <div className="py-16">
-            <h2 className="text-3xl font-semibold tracking-tight">What local clients say</h2>
+            <h2 className="text-3xl font-semibold tracking-tight">What clients say after switching</h2>
             <div className="mt-8 grid gap-4 md:grid-cols-3">
               {testimonials.map((testimonial) => (
                 <blockquote className="panel p-5" key={testimonial.name}>
@@ -141,7 +141,7 @@ export function HomePage(): JSX.Element {
         <PageContainer>
           <div className="py-16">
             <div className="panel p-8 text-center">
-              <h2 className="text-3xl font-semibold tracking-tight">Ready for property management that feels personal?</h2>
+              <h2 className="text-3xl font-semibold tracking-tight">Ready for a management partner your properties deserve?</h2>
               <p className="mx-auto mt-3 max-w-2xl text-[var(--color-text-muted)]">
                 Whether you are an owner looking for dependable support or a renter searching for the right home, we are here to help.
               </p>

@@ -63,30 +63,30 @@ export function AboutContactPage(): JSX.Element {
   return (
     <PageContainer>
       <section className="py-14">
-        <h1 className="text-4xl font-semibold tracking-tight">Local roots, professional care</h1>
+        <h1 className="text-4xl font-semibold tracking-tight">Local intelligence, white-glove execution</h1>
         <p className="mt-3 max-w-2xl text-[var(--color-text-muted)]">
-          John Gluth Wright Property Management combines neighborly service with dependable systems owners and renters can trust.
+          John Gluth Wright Property Management brings boutique-level service to every owner relationship and every resident experience.
         </p>
       </section>
 
       <section className="grid gap-6 md:grid-cols-2">
         <article className="panel p-6">
-          <h2 className="text-2xl font-semibold">How we work</h2>
+          <h2 className="text-2xl font-semibold">Our management process</h2>
           <ol className="mt-4 space-y-3 text-[var(--color-text-muted)]">
             <li>
-              <span className="font-semibold text-[var(--color-text)]">1. Conversation:</span> We learn your goals and property needs.
+              <span className="font-semibold text-[var(--color-text)]">1. Strategy:</span> We map goals, risk tolerance, and ideal resident profile.
             </li>
             <li>
-              <span className="font-semibold text-[var(--color-text)]">2. Plan:</span> We align on leasing, maintenance, and communication expectations.
+              <span className="font-semibold text-[var(--color-text)]">2. Execution:</span> We launch marketing, leasing, and maintenance workflows with clear ownership.
             </li>
             <li>
-              <span className="font-semibold text-[var(--color-text)]">3. Ongoing support:</span> We keep owners informed and residents supported.
+              <span className="font-semibold text-[var(--color-text)]">3. Oversight:</span> We deliver reporting, resident care, and proactive optimization.
             </li>
           </ol>
         </article>
 
         <article className="panel p-6">
-          <h2 className="text-2xl font-semibold">Contact details</h2>
+          <h2 className="text-2xl font-semibold">Direct contact</h2>
           <p className="mt-4 text-[var(--color-text-muted)]">Phone: (509) 555-0144</p>
           <p className="mt-2 text-[var(--color-text-muted)]">Email: hello@gluthwrightproperties.com</p>
           <p className="mt-2 text-[var(--color-text-muted)]">Office hours: Mon-Fri, 8:30 AM to 5:30 PM</p>
@@ -96,7 +96,7 @@ export function AboutContactPage(): JSX.Element {
 
       <section className="py-10" id="contact-form">
         <div className="panel p-6">
-          <h2 className="text-2xl font-semibold">Talk to our team</h2>
+          <h2 className="text-2xl font-semibold">Start a conversation with our team</h2>
           <p className="mt-2 text-[var(--color-text-muted)]">Tell us a little about your needs and we will follow up quickly.</p>
           <form className="mt-6 space-y-4" noValidate onSubmit={handleSubmit}>
             <label className="block text-sm">
