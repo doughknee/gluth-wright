@@ -8,7 +8,7 @@ export function SiteFooter(): JSX.Element {
       <PageContainer>
         <div className="flex flex-col gap-5 py-8 sm:flex-row sm:items-center sm:justify-between sm:py-10">
           <div>
-            <p className="text-sm font-semibold text-[var(--color-text)]">Gluth Wright Property Management</p>
+            <p className="text-sm font-semibold text-[var(--color-text)]">Gluth Wright Properties</p>
             <p className="mt-1 text-sm text-[var(--color-text-muted)]">Locally focused leasing and resident care.</p>
           </div>
           <nav aria-label="Footer navigation" className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">

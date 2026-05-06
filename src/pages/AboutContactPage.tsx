@@ -66,7 +66,7 @@ export function AboutContactPage(): JSX.Element {
         <p className="eyebrow">Inside The Team</p>
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Local intelligence, white-glove execution</h1>
         <p className="mt-3 max-w-2xl text-[var(--color-text-muted)]">
-          John Gluth Wright Property Management brings boutique-level service to every owner relationship and every resident experience.
+          Gluth Wright Properties brings boutique-level service to every owner relationship and every resident experience.
         </p>
       </section>
 

@@ -144,7 +144,7 @@ export const ownerReasons = [
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'John Gluth Wright took over two properties that had been stressful to manage. Within weeks, communication was clear and everything was organized.',
+      'Gluth Wright Properties took over two homes that had been stressful to manage. Within weeks, communication was clear and everything was organized.',
     name: 'Rachel M.',
     role: 'Property Owner',
   },

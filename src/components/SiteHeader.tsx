@@ -6,9 +6,17 @@ export function SiteHeader(): JSX.Element {
   return (
     <header className="sticky top-0 z-20 border-b border-[var(--color-border)] bg-[var(--color-card)]/90 backdrop-blur-md">
       <PageContainer>
-        <div className="flex min-h-16 items-center justify-between gap-3 py-2 sm:min-h-20 sm:py-0">
-          <Link to="/" className="max-w-[11.5rem] text-sm font-semibold leading-tight tracking-wide text-[var(--color-text)] sm:max-w-none sm:text-lg">
-            Gluth Wright Property Management
+        <div className="flex min-h-16 items-center justify-between gap-2 py-2 sm:min-h-20 sm:gap-4 sm:py-0">
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3">
+            <img
+              alt="Gluth Wright Properties logo"
+              className="h-10 w-auto rounded-sm sm:h-12"
+              loading="eager"
+              src="https://lirp.cdn-website.com/5a3149f7/dms3rep/multi/opt/logo-2-1920w.jpg"
+            />
+            <span className="hidden text-sm font-semibold leading-tight tracking-wide text-[var(--color-text)] sm:block sm:text-base">
+              Gluth Wright Properties
+            </span>
           </Link>
           <Link
             to={primaryCta.href}
@@ -17,7 +25,7 @@ export function SiteHeader(): JSX.Element {
             Talk to Us
           </Link>
         </div>
-        <nav aria-label="Primary navigation" className="scrollbar-none -mx-1 flex gap-2 overflow-x-auto pb-3 sm:mx-0 sm:gap-6 sm:overflow-visible sm:pb-0">
+        <nav aria-label="Primary navigation" className="scrollbar-none -mx-1 flex gap-2 overflow-x-auto pb-2 sm:mx-0 sm:gap-6 sm:overflow-visible sm:pb-0">
           {navItems.map((item) => (
             <NavLink
               key={item.path}

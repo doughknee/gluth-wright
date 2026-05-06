@@ -22,7 +22,7 @@ export function HomePage(): JSX.Element {
           <div className="grid gap-10 py-12 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-28">
             <div>
               <p className="eyebrow mb-3">
-                John Gluth Wright Property Management
+                Gluth Wright Properties
               </p>
               <h1 className="hero-title font-semibold">
                 Property management that feels <span className="luxury-line">elevated, local, and deeply reliable.</span>
