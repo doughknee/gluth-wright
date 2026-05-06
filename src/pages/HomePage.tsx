@@ -15,7 +15,7 @@ export function HomePage(): JSX.Element {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b border-[var(--color-border)]">
+      <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute -left-28 top-16 h-72 w-72 rounded-full bg-[color-mix(in_oklab,var(--color-highlight),transparent_82%)] blur-3xl" />
         <div className="pointer-events-none absolute -right-24 bottom-10 h-64 w-64 rounded-full bg-[color-mix(in_oklab,var(--color-accent),transparent_84%)] blur-3xl" />
         <PageContainer>
@@ -46,14 +46,14 @@ export function HomePage(): JSX.Element {
               <img
                 alt="Luxury residential home exterior at dusk"
                 className="h-72 w-full rounded-xl object-cover sm:h-96"
-                src="https://images.unsplash.com/photo-1600607687644-c7f34b5f7f91?auto=format&fit=crop&w=1400&q=80"
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80"
               />
             </div>
           </div>
         </PageContainer>
       </section>
 
-      <section className="border-b border-[var(--color-border)]">
+      <section>
         <PageContainer>
           <ul className="grid gap-3 py-8 sm:grid-cols-3 sm:gap-4 sm:py-10">
             {trustStats.map((stat) => (
@@ -91,7 +91,7 @@ export function HomePage(): JSX.Element {
         </PageContainer>
       </section>
 
-      <section className="border-y border-[var(--color-border)]">
+      <section>
         <PageContainer>
           <div className="py-12 sm:py-16">
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-4">
@@ -118,7 +118,7 @@ export function HomePage(): JSX.Element {
         </PageContainer>
       </section>
 
-      <section>
+      <section className="bg-[color-mix(in_oklab,var(--color-surface-secondary),transparent_45%)]">
         <PageContainer>
           <div className="py-12 sm:py-16">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">Why owners move to us and stay</h2>
@@ -133,7 +133,7 @@ export function HomePage(): JSX.Element {
         </PageContainer>
       </section>
 
-      <section className="border-y border-[var(--color-border)]">
+      <section>
         <PageContainer>
           <div className="py-12 sm:py-16">
             <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">What clients say after switching</h2>
