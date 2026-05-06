@@ -143,6 +143,15 @@ textarea:focus-visible {
   text-wrap: balance;
 }
 
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 .luxury-line {
   display: inline-block;
   background: linear-gradient(100deg, var(--color-text), color-mix(in oklab, var(--color-highlight), white 30%));
@@ -163,5 +172,29 @@ textarea:focus-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    background:
+      radial-gradient(circle at 50% -10%, color-mix(in oklab, var(--color-highlight), transparent 90%), transparent 48%),
+      linear-gradient(155deg, var(--color-surface), var(--color-surface-secondary));
+  }
+
+  .panel {
+    border-radius: 0.85rem;
+    box-shadow: 0 16px 30px -24px rgba(2, 10, 22, 0.75);
+  }
+
+  .hero-title {
+    font-size: clamp(1.95rem, 9vw, 2.65rem);
+    line-height: 1.08;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    min-height: 2.8rem;
+    padding-inline: 0.95rem;
   }
 }

@@ -41,15 +41,15 @@ export function ListingsPage(): JSX.Element {
 
   return (
     <PageContainer>
-      <section className="py-16">
+      <section className="py-10 sm:py-16">
         <p className="eyebrow">Curated Availability</p>
-        <h1 className="text-4xl font-semibold tracking-tight">Find a residence that matches your lifestyle</h1>
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Find a residence that matches your lifestyle</h1>
         <p className="mt-3 max-w-2xl text-[var(--color-text-muted)]">
           Explore current availability with clear pricing, neighborhood context, and direct access to our team for guided tours.
         </p>
       </section>
 
-      <section className="panel p-5">
+      <section className="panel p-4 sm:p-5">
         <div className="grid gap-3 md:grid-cols-4">
           <label className="text-sm">
             <span className="mb-1 block font-medium">Area</span>
@@ -103,15 +103,15 @@ export function ListingsPage(): JSX.Element {
         </div>
       </section>
 
-      <section className="py-6">
+      <section className="py-4 sm:py-6">
         <button className="btn-secondary text-xs" onClick={() => setHasLoadError((prev) => !prev)} type="button">
           {hasLoadError ? 'Hide' : 'Show'} demo error state
         </button>
       </section>
 
       {hasLoadError ? (
-        <section className="panel p-8">
-          <h2 className="text-2xl font-semibold">We could not load residences right now</h2>
+        <section className="panel p-6 sm:p-8">
+          <h2 className="text-xl font-semibold sm:text-2xl">We could not load residences right now</h2>
           <p className="mt-2 text-[var(--color-text-muted)]">
             Please try again in a moment, or contact our team directly and we will walk you through current availability.
           </p>
@@ -120,8 +120,8 @@ export function ListingsPage(): JSX.Element {
           </Link>
         </section>
       ) : filteredListings.length === 0 ? (
-        <section className="panel p-8">
-          <h2 className="text-2xl font-semibold">No residences match those filters yet</h2>
+        <section className="panel p-6 sm:p-8">
+          <h2 className="text-xl font-semibold sm:text-2xl">No residences match those filters yet</h2>
           <p className="mt-2 text-[var(--color-text-muted)]">
             Try widening your budget or neighborhood preferences. We can also notify you when new homes become available.
           </p>
@@ -130,7 +130,7 @@ export function ListingsPage(): JSX.Element {
           </Link>
         </section>
       ) : (
-        <section className="grid gap-6 pb-20 pt-4 md:grid-cols-2 lg:grid-cols-3">
+        <section className="grid gap-4 pb-14 pt-3 sm:gap-6 sm:pb-20 sm:pt-4 md:grid-cols-2 lg:grid-cols-3">
           {filteredListings.map((listing) => (
             <article className="panel overflow-hidden transition hover:-translate-y-1" key={listing.id}>
               <img alt={listing.title} className="h-48 w-full object-cover" loading="lazy" src={listing.imageUrl} />

@@ -62,17 +62,17 @@ export function AboutContactPage(): JSX.Element {
 
   return (
     <PageContainer>
-      <section className="py-16">
+      <section className="py-10 sm:py-16">
         <p className="eyebrow">Inside The Team</p>
-        <h1 className="text-4xl font-semibold tracking-tight">Local intelligence, white-glove execution</h1>
+        <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Local intelligence, white-glove execution</h1>
         <p className="mt-3 max-w-2xl text-[var(--color-text-muted)]">
           John Gluth Wright Property Management brings boutique-level service to every owner relationship and every resident experience.
         </p>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-[0.9fr_1.1fr]">
-        <article className="panel p-6">
-          <h2 className="text-2xl font-semibold">Our management process</h2>
+      <section className="grid gap-4 sm:gap-6 md:grid-cols-[0.9fr_1.1fr]">
+        <article className="panel p-5 sm:p-6">
+          <h2 className="text-xl font-semibold sm:text-2xl">Our management process</h2>
           <ol className="mt-4 space-y-3 text-[var(--color-text-muted)]">
             <li>
               <span className="font-semibold text-[var(--color-text)]">1. Strategy:</span> We map goals, risk tolerance, and ideal resident profile.
@@ -86,8 +86,8 @@ export function AboutContactPage(): JSX.Element {
           </ol>
         </article>
 
-        <article className="panel p-6">
-          <h2 className="text-2xl font-semibold">Direct contact</h2>
+        <article className="panel p-5 sm:p-6">
+          <h2 className="text-xl font-semibold sm:text-2xl">Direct contact</h2>
           <p className="mt-4 text-[var(--color-text-muted)]">Phone: (509) 555-0144</p>
           <p className="mt-2 text-[var(--color-text-muted)]">Email: hello@gluthwrightproperties.com</p>
           <p className="mt-2 text-[var(--color-text-muted)]">Office hours: Mon-Fri, 8:30 AM to 5:30 PM</p>
@@ -95,9 +95,9 @@ export function AboutContactPage(): JSX.Element {
         </article>
       </section>
 
-      <section className="py-12" id="contact-form">
-        <div className="panel p-6">
-          <h2 className="text-2xl font-semibold">Start a conversation with our team</h2>
+      <section className="py-10 sm:py-12" id="contact-form">
+        <div className="panel p-5 sm:p-6">
+          <h2 className="text-xl font-semibold sm:text-2xl">Start a conversation with our team</h2>
           <p className="mt-2 text-[var(--color-text-muted)]">Tell us a little about your needs and we will follow up quickly.</p>
           <form className="mt-6 space-y-4" noValidate onSubmit={handleSubmit}>
             <label className="block text-sm">

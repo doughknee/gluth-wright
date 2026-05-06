@@ -6,33 +6,35 @@ export function SiteHeader(): JSX.Element {
   return (
     <header className="sticky top-0 z-20 border-b border-[var(--color-border)] bg-[var(--color-card)]/90 backdrop-blur-md">
       <PageContainer>
-        <div className="flex min-h-20 flex-wrap items-center justify-between gap-4">
-          <Link to="/" className="text-lg font-semibold tracking-wide text-[var(--color-text)]">
+        <div className="flex min-h-16 items-center justify-between gap-3 py-2 sm:min-h-20 sm:py-0">
+          <Link to="/" className="max-w-[11.5rem] text-sm font-semibold leading-tight tracking-wide text-[var(--color-text)] sm:max-w-none sm:text-lg">
             Gluth Wright Property Management
           </Link>
-          <nav aria-label="Primary navigation" className="flex items-center gap-4 sm:gap-6">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                className={({ isActive }) =>
-                  [
-                    'text-sm font-medium transition-colors',
-                    isActive ? 'text-[var(--color-accent)]' : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]',
-                  ].join(' ')
-                }
-              >
-                {item.label}
-              </NavLink>
-            ))}
-          </nav>
           <Link
             to={primaryCta.href}
-            className="rounded-md bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-[var(--color-card)] transition-colors hover:bg-[var(--color-accent-strong)]"
+            className="rounded-full bg-[var(--color-accent)] px-3 py-2 text-xs font-semibold text-[#1c150c] transition-colors hover:bg-[var(--color-accent-strong)] sm:px-4 sm:py-2 sm:text-sm"
           >
-            {primaryCta.label}
+            Talk to Us
           </Link>
         </div>
+        <nav aria-label="Primary navigation" className="scrollbar-none -mx-1 flex gap-2 overflow-x-auto pb-3 sm:mx-0 sm:gap-6 sm:overflow-visible sm:pb-0">
+          {navItems.map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({ isActive }) =>
+                [
+                  'whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors sm:border-0 sm:px-0 sm:py-0 sm:text-sm',
+                  isActive
+                    ? 'border-[var(--color-accent)] text-[var(--color-accent)]'
+                    : 'border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-text)]',
+                ].join(' ')
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
       </PageContainer>
     </header>
   )
