@@ -62,14 +62,15 @@ export function AboutContactPage(): JSX.Element {
 
   return (
     <PageContainer>
-      <section className="py-14">
+      <section className="py-16">
+        <p className="eyebrow">Inside The Team</p>
         <h1 className="text-4xl font-semibold tracking-tight">Local intelligence, white-glove execution</h1>
         <p className="mt-3 max-w-2xl text-[var(--color-text-muted)]">
           John Gluth Wright Property Management brings boutique-level service to every owner relationship and every resident experience.
         </p>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-2">
+      <section className="grid gap-6 md:grid-cols-[0.9fr_1.1fr]">
         <article className="panel p-6">
           <h2 className="text-2xl font-semibold">Our management process</h2>
           <ol className="mt-4 space-y-3 text-[var(--color-text-muted)]">
@@ -94,7 +95,7 @@ export function AboutContactPage(): JSX.Element {
         </article>
       </section>
 
-      <section className="py-10" id="contact-form">
+      <section className="py-12" id="contact-form">
         <div className="panel p-6">
           <h2 className="text-2xl font-semibold">Start a conversation with our team</h2>
           <p className="mt-2 text-[var(--color-text-muted)]">Tell us a little about your needs and we will follow up quickly.</p>

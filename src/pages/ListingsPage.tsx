@@ -41,7 +41,8 @@ export function ListingsPage(): JSX.Element {
 
   return (
     <PageContainer>
-      <section className="py-14">
+      <section className="py-16">
+        <p className="eyebrow">Curated Availability</p>
         <h1 className="text-4xl font-semibold tracking-tight">Find a residence that matches your lifestyle</h1>
         <p className="mt-3 max-w-2xl text-[var(--color-text-muted)]">
           Explore current availability with clear pricing, neighborhood context, and direct access to our team for guided tours.
@@ -102,7 +103,7 @@ export function ListingsPage(): JSX.Element {
         </div>
       </section>
 
-      <section className="py-8">
+      <section className="py-6">
         <button className="btn-secondary text-xs" onClick={() => setHasLoadError((prev) => !prev)} type="button">
           {hasLoadError ? 'Hide' : 'Show'} demo error state
         </button>
@@ -129,9 +130,9 @@ export function ListingsPage(): JSX.Element {
           </Link>
         </section>
       ) : (
-        <section className="grid gap-5 pb-16 pt-3 md:grid-cols-2 lg:grid-cols-3">
+        <section className="grid gap-6 pb-20 pt-4 md:grid-cols-2 lg:grid-cols-3">
           {filteredListings.map((listing) => (
-            <article className="panel overflow-hidden" key={listing.id}>
+            <article className="panel overflow-hidden transition hover:-translate-y-1" key={listing.id}>
               <img alt={listing.title} className="h-48 w-full object-cover" loading="lazy" src={listing.imageUrl} />
               <div className="p-4">
                 <h2 className="text-lg font-semibold">{listing.title}</h2>
