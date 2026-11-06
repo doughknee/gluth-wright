@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Owners — Gluth Wright Property Management</title>
+<meta name="description" content="No black-box management. Transparent monthly owner statements, leasing, maintenance coordination, and resident care.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<div class="preview-note wrap">Website concept · Sample listings and figures</div>
+
+<header class="site-header wrap">
+  <a class="logo" href="index.html" aria-label="Gluth Wright home"><img src="assets/logo.jpg" alt="Gluth Wright Property Management LLC"></a>
+  <nav aria-label="Main">
+    <a href="owners.html" class="current">For owners</a>
+    <a href="index.html#rentals">Rentals</a>
+    <a href="residents.html">Residents</a>
+    <a href="#start">Contact</a>
+    <a class="btn red" href="residents.html#pay">Pay rent</a>
+  </nav>
+</header>
+
+<section class="wrap" style="padding-top:clamp(40px,6vw,72px);padding-bottom:48px">
+  <p class="eyebrow" style="color:#A81A1E;margin:0 0 12px">For property owners</p>
+  <h1 class="disp" style="font-size:clamp(80px,12vw,180px)">No black-box<br>management.</h1>
+  <p style="max-width:620px;margin:24px 0 0;font-size:20px;line-height:1.45">You get transparent reporting, proactive communication, and decisive action when issues surface. This is what lands in your inbox every month.</p>
+</section>
+
+<section id="statement" class="wrap" aria-label="Sample owner statement" style="padding-bottom:72px">
+  <div class="statement"><div class="inner">
+    <div class="head">
+      <div><div class="disp" style="font-size:44px">Owner statement</div><div class="mono" style="font-size:14px">Sample property · 3 bd / 2 ba · October</div></div>
+      <div class="eyebrow stamp">Sample — illustrative figures</div>
+    </div>
+    <div class="eyebrow cols"><span>Date</span><span>Entry</span><span style="text-align:right">Debit</span><span style="text-align:right">Credit</span></div>
+    <div class="row"><span class="mono" style="font-size:15px">10/01</span><span>Rent received</span><span class="mono debit"></span><span class="mono credit">1,895.00</span></div>
+    <div class="row"><span class="mono" style="font-size:15px">10/05</span><span>Management fee <span class="note">8% of rent collected</span></span><span class="mono debit">151.60</span><span class="mono credit"></span></div>
+    <div class="row"><span class="mono" style="font-size:15px">10/14</span><span>Kitchen faucet replaced <span class="note">invoice + photos attached</span></span><span class="mono debit">185.00</span><span class="mono credit"></span></div>
+    <div class="total"><strong style="font-size:19px">Net paid to owner</strong><span class="mono">$1,558.40</span></div>
+  </div></div>
+  <div class="proof">
+    <p><strong>Every repair has a receipt.</strong> Invoice and photos sit next to the charge.</p>
+    <p><strong>Every charge has a reason.</strong> Plain English, no codes to decipher.</p>
+    <p><strong>Every month, same format.</strong> Simple reporting you can scan in a minute.</p>
+  </div>
+</section>
+
+<section class="dark wrap">
+  <h2 class="disp" style="margin-bottom:32px">What we handle</h2>
+  <div class="steps">
+    <div class="step"><h3>Leasing Support</h3><p>Professional marketing, thoughtful showings, and careful screening for lasting placements.</p></div>
+    <div class="step"><h3>Tenant Care</h3><p>Friendly communication that keeps residents informed, respected, and supported year-round.</p></div>
+    <div class="step"><h3>Maintenance Coordination</h3><p>Reliable local vendors and clear updates so issues are handled quickly and correctly.</p></div>
+    <div class="step"><h3>Owner Reporting</h3><p>Simple monthly reporting with practical insight into performance and property health.</p></div>
+  </div>
+</section>
+
+<section id="start" class="pad wrap lead">
+  <div class="copy">
+    <h2 class="disp">What could your property rent for?</h2>
+    <p>Owners could use this form to ask about a property. Try it with the sample details below.</p>
+  </div>
+  <form onsubmit="event.preventDefault();document.getElementById('estimate-result').hidden=false;">
+    <div class="full"><label for="addr">Property address</label><input id="addr" name="address" type="text" readonly value="123 Sample Lane"></div>
+    <div><label for="name">Your name</label><input id="name" name="name" type="text" readonly value="Alex Example"></div>
+    <div><label for="units">Number of units</label><input id="units" name="units" type="number" value="1" readonly></div>
+    <div><label for="email">Email</label><input id="email" name="email" type="email" readonly value="alex@example.com"></div>
+    <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" readonly value="(615) 555-0100"></div>
+    <div class="full"><button class="btn red" type="submit">Preview estimate request</button></div>
+  <p id="estimate-result" class="full" role="status" hidden>Sample request complete. No information was sent.</p>
+  </form>
+</section>
+
+<footer class="site-footer wrap" style="padding-top:32px;padding-bottom:32px">
+  <div><strong>Gluth Wright Property Management LLC</strong><br>Equal Housing Opportunity</div>
+
+</footer>
+
+</body>
+</html>
