@@ -131,3 +131,4 @@ input[type=checkbox]{width:22px;min-height:22px;height:22px;margin:0;padding:0}
 .preview-note{background:var(--ink);color:var(--paper);font:500 13px/1.5 'IBM Plex Mono',monospace;padding-top:6px;padding-bottom:6px}
 .dark .btn.paper{color:var(--ink)}
 @media(max-width:640px){.hero h1{font-size:clamp(64px,17vw,100px)}.site-header nav{gap:8px 16px}.door{min-height:250px;padding:24px}.listing{display:grid;grid-template-columns:88px 1fr;gap:4px 16px}.listing img{grid-row:1/5;width:88px;height:96px}.listing .rent{text-align:left}.listing .title{font-size:18px}.listing .size,.listing .when,.listing .rent{grid-column:2}}
+@media(min-width:1100px){.hero h1{font-size:clamp(110px,10.3vw,180px)}}
