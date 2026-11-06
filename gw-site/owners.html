@@ -6,41 +6,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>For Owners — Gluth Wright Property Management</title>
 <meta name="description" content="No black-box management. Transparent monthly owner statements, leasing, maintenance coordination, and resident care.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/league-gothic-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div class="preview-note wrap">Website concept · Sample listings and figures</div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<aside class="preview-note wrap" aria-label="Preview notice">Website concept · Sample listings and figures</aside>
 
 <header class="site-header wrap">
-  <a class="logo" href="index.html" aria-label="Gluth Wright home"><img src="assets/logo.jpg" alt="Gluth Wright Property Management LLC"></a>
+  <a class="logo" href="index.html" aria-label="Gluth Wright home"><img src="assets/logo.jpg" width="276" height="90" alt="Gluth Wright Property Management LLC"></a>
   <nav aria-label="Main">
-    <a href="owners.html" class="current">For owners</a>
+    <a href="owners.html" class="current" aria-current="page">For owners</a>
     <a href="index.html#rentals">Rentals</a>
     <a href="residents.html">Residents</a>
     <a href="#start">Contact</a>
-    <a class="btn red" href="residents.html#pay">Pay rent</a>
   </nav>
+  <a class="header-pay btn red" href="residents.html#pay">Pay rent</a>
 </header>
+<main id="main-content" tabindex="-1">
 
 <section class="wrap" style="padding-top:clamp(40px,6vw,72px);padding-bottom:48px">
   <p class="eyebrow" style="color:#A81A1E;margin:0 0 12px">For property owners</p>
-  <h1 class="disp" style="font-size:clamp(80px,12vw,180px)">No black-box<br>management.</h1>
+  <h1 class="disp owner-title">No black-box<br>management.</h1>
   <p style="max-width:620px;margin:24px 0 0;font-size:20px;line-height:1.45">You get transparent reporting, proactive communication, and decisive action when issues surface. This is what lands in your inbox every month.</p>
 </section>
 
 <section id="statement" class="wrap" aria-label="Sample owner statement" style="padding-bottom:72px">
   <div class="statement"><div class="inner">
     <div class="head">
-      <div><div class="disp" style="font-size:44px">Owner statement</div><div class="mono" style="font-size:14px">Sample property · 3 bd / 2 ba · October</div></div>
-      <div class="eyebrow stamp">Sample — illustrative figures</div>
+      <div><h2 class="disp statement-title">Owner statement</h2><div class="mono" style="font-size:14px">Sample property · 3 bd / 2 ba · October</div></div>
+      <div class="eyebrow stamp">Sample statement</div>
     </div>
-    <div class="eyebrow cols"><span>Date</span><span>Entry</span><span style="text-align:right">Debit</span><span style="text-align:right">Credit</span></div>
-    <div class="row"><span class="mono" style="font-size:15px">10/01</span><span>Rent received</span><span class="mono debit"></span><span class="mono credit">1,895.00</span></div>
-    <div class="row"><span class="mono" style="font-size:15px">10/05</span><span>Management fee <span class="note">8% of rent collected</span></span><span class="mono debit">151.60</span><span class="mono credit"></span></div>
-    <div class="row"><span class="mono" style="font-size:15px">10/14</span><span>Kitchen faucet replaced <span class="note">invoice + photos attached</span></span><span class="mono debit">185.00</span><span class="mono credit"></span></div>
+    <div role="table" aria-label="October owner transactions">
+    <div class="eyebrow cols" role="row"><span role="columnheader">Date</span><span role="columnheader">Entry</span><span role="columnheader" style="text-align:right">Debit</span><span role="columnheader" style="text-align:right">Credit</span></div>
+    <div class="row" role="row"><span role="cell" class="mono" style="font-size:15px">10/01</span><span role="cell">Rent received</span><span role="cell" aria-colindex="3" class="mono debit"></span><span role="cell" aria-colindex="4" class="mono credit">1,895.00</span></div>
+    <div class="row" role="row"><span role="cell" class="mono" style="font-size:15px">10/05</span><span role="cell">Management fee <span class="note">8% of rent collected</span></span><span role="cell" aria-colindex="3" class="mono debit">151.60</span><span role="cell" aria-colindex="4" class="mono credit"></span></div>
+    <div class="row" role="row"><span role="cell" class="mono" style="font-size:15px">10/14</span><span role="cell">Kitchen faucet replaced <span class="note">invoice + photos attached</span></span><span role="cell" aria-colindex="3" class="mono debit">185.00</span><span role="cell" aria-colindex="4" class="mono credit"></span></div>
+    </div>
     <div class="total"><strong style="font-size:19px">Net paid to owner</strong><span class="mono">$1,558.40</span></div>
   </div></div>
   <div class="proof">
@@ -63,19 +65,20 @@
 <section id="start" class="pad wrap lead">
   <div class="copy">
     <h2 class="disp">What could your property rent for?</h2>
-    <p>Owners could use this form to ask about a property. Try it with the sample details below.</p>
+    <p>Try an estimate request with the sample property below. You can edit these details for the preview.</p>
   </div>
-  <form onsubmit="event.preventDefault();document.getElementById('estimate-result').hidden=false;">
-    <div class="full"><label for="addr">Property address</label><input id="addr" name="address" type="text" readonly value="123 Sample Lane"></div>
-    <div><label for="name">Your name</label><input id="name" name="name" type="text" readonly value="Alex Example"></div>
-    <div><label for="units">Number of units</label><input id="units" name="units" type="number" value="1" readonly></div>
-    <div><label for="email">Email</label><input id="email" name="email" type="email" readonly value="alex@example.com"></div>
-    <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" readonly value="(615) 555-0100"></div>
+  <form autocomplete="off" oninput="document.getElementById('estimate-result').hidden=true" onsubmit="event.preventDefault();document.getElementById('estimate-result').hidden=false;document.getElementById('estimate-result').focus();">
+    <div class="full"><label for="addr">Property address</label><input id="addr" required type="text" value="123 Sample Lane"></div>
+    <div><label for="name">Your name</label><input id="name" required type="text" value="Alex Example"></div>
+    <div><label for="units">Number of units</label><input id="units" required min="1" type="number" value="1"></div>
+    <div><label for="email">Email</label><input id="email" required type="email" value="alex@example.com"></div>
+    <div><label for="phone">Phone</label><input id="phone"  type="tel" value="(615) 555-0100"></div>
     <div class="full"><button class="btn red" type="submit">Preview estimate request</button></div>
-  <p id="estimate-result" class="full" role="status" hidden>Sample request complete. No information was sent.</p>
+  <p id="estimate-result" class="full" tabindex="-1" role="status" hidden>Sample request complete. No information was sent.</p>
   </form>
 </section>
 
+</main>
 <footer class="site-footer wrap" style="padding-top:32px;padding-bottom:32px">
   <div><strong>Gluth Wright Property Management LLC</strong><br>Equal Housing Opportunity</div>
 

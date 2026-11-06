@@ -6,16 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Resident Portal — Gluth Wright Property Management</title>
 <meta name="description" content="Pay rent and request repairs.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/league-gothic-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-<div class="preview-note wrap">Resident portal demo · No payments or repair requests are sent</div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<aside class="preview-note wrap" aria-label="Preview notice">Resident portal demo · No payments or repair requests are sent</aside>
 
 <header class="site-header wrap">
-  <a class="logo" href="index.html" aria-label="Gluth Wright home"><img src="assets/logo.jpg" alt="Gluth Wright Property Management LLC"></a>
+  <a class="logo" href="index.html" aria-label="Gluth Wright home"><img src="assets/logo.jpg" width="276" height="90" alt="Gluth Wright Property Management LLC"></a>
   <div style="display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px"><span class="mono" style="font-size:14px">Sample Resident · 3 bd / 2 ba</span><a href="index.html">Back to website</a></div>
 </header>
 
@@ -25,20 +24,21 @@
   <button type="button" data-go="repair">Repairs</button>
 </nav>
 
-<main class="portal wrap">
+<main class="portal wrap" id="main-content" tabindex="-1">
 
   <section class="view on" id="view-home">
+    <h1 class="disp portal-title">Resident account</h1>
     <div class="cards">
       <div class="card ink">
         <div><div class="eyebrow">Balance due December 1</div><div class="mono big">$1,895.00</div></div>
-        <div class="row"><button class="btn red" type="button" data-go="pay">Pay rent</button><span>Autopay: off</span></div>
+        <div class="row"><button class="btn red" type="button" data-go="pay">Pay rent</button><span>Sample account</span></div>
       </div>
       <div class="card line">
-        <div><div class="eyebrow" style="color:#A81A1E">Something broken?</div><h2 class="disp" style="font-size:56px;margin-top:10px">Tell us. We will take it from there.</h2></div>
+        <div><div class="eyebrow" style="color:#A81A1E">Something broken?</div><h2 class="disp repair-prompt">Tell us. We will take it from there.</h2></div>
         <div><button class="btn" type="button" data-go="repair">Request a repair</button></div>
       </div>
     </div>
-    <h2 class="disp" style="font-size:44px;margin:44px 0 12px">Your account</h2>
+    <h2 class="disp" style="font-size:44px;margin:44px 0 12px">Account activity</h2>
     <div class="history"><div class="inner">
       <div class="line"><span class="mono" style="font-size:15px">11/01</span><span>Rent payment, thank you</span><span class="mono amt">-1,895.00</span></div>
       <div class="line"><span class="mono" style="font-size:15px">11/01</span><span>November rent</span><span class="mono amt">1,895.00</span></div>
@@ -55,14 +55,15 @@
       <button class="pick" type="button" aria-pressed="true"><span>Bank account</span></button>
       <button class="pick" type="button" aria-pressed="false"><span>Debit or credit card</span></button>
     </div>
-    <div class="check"><input id="auto" type="checkbox"><label for="auto">Turn on autopay for the 1st of each month</label></div>
+    <div class="check"><input id="auto" type="checkbox"><label for="auto">Preview monthly autopay on the 1st</label></div>
     <div class="actions"><button class="btn red" type="button" data-go="paid">Preview payment</button><button class="btn" type="button" data-go="home">Cancel</button></div>
   </section>
 
   <section class="view narrow" id="view-paid">
     <div class="receipt">
-      <div class="eyebrow ok">Sample receipt</div>
+      <h1 class="eyebrow ok">Sample receipt</h1>
       <div class="mono big">$1,895.00</div>
+      <p id="receipt-options"></p>
       <p style="margin:0 0 20px">Demo confirmation GW-000000. No money moved and no email was sent.</p>
       <button class="btn" type="button" data-go="home">Back to account</button>
     </div>
@@ -89,7 +90,8 @@
 
   <section class="view mid" id="view-filed">
     <div class="eyebrow ok">Work order WO-0000 · <span id="filed-cat">Plumbing</span></div>
-    <h1 class="disp" style="font-size:72px;margin:8px 0 24px">Sample work order.<//h1>
+    <h1 class="disp" style="font-size:72px;margin:8px 0 24px">Sample work order.</h1>
+    <p id="repair-summary"></p>
     <ol class="tracker">
       <li class="done"><span>Request received</span><span class="mono" style="font-size:15px">Done</span></li>
       <li><span>Reviewed by our team</span><span class="mono" style="font-size:15px">Next</span></li>
@@ -103,31 +105,7 @@
 
 <footer class="mono portal-foot wrap">Prototype with sample data. No real payment or work order is created.</footer>
 
-<script>
-(function () {
-  var tabFor = { home: 'home', pay: 'pay', paid: 'pay', repair: 'repair', filed: 'repair' };
-  function show(view) {
-    document.querySelectorAll('.view').forEach(function (v) { v.classList.toggle('on', v.id === 'view-' + view); });
-    document.querySelectorAll('.tabs button').forEach(function (b) {
-      if (b.dataset.go === tabFor[view]) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
-    });
-    if (view === 'filed') {
-      var on = document.querySelector('[data-group="cat"] .pick[aria-pressed="true"]');
-      document.getElementById('filed-cat').textContent = on ? on.textContent.trim() : 'Other';
-    }
-    window.scrollTo({ top: 0 });
-  }
-  document.addEventListener('click', function (e) {
-    var go = e.target.closest('[data-go]');
-    if (go) { show(go.dataset.go); return; }
-    var pick = e.target.closest('.pick');
-    if (pick) {
-      pick.parentElement.querySelectorAll('.pick').forEach(function (p) { p.setAttribute('aria-pressed', p === pick ? 'true' : 'false'); });
-    }
-  });
-  if (['#repair', '#pay'].includes(location.hash)) show(location.hash.slice(1));
-})();
-</script>
+<script src="assets/portal.js"></script>
 
 </body>
 </html>
