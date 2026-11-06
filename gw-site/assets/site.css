@@ -366,4 +366,4 @@ input[type=checkbox]{width:22px;min-height:22px;height:22px;margin:0;padding:0}
 
 .portal .repair-prompt { font-size: clamp(40px, 4.2vw, 56px); margin-top: 10px; }
 .card.ink { container-type: inline-size; }
-.card.ink .big { font-size: clamp(28px, 16cqi, 64px); }
+.card.ink .big { font-size: clamp(26px, 14cqi, 64px); }
